@@ -99,18 +99,29 @@ export function isDevanagari(s) {
   return /[\u0900-\u097F]/.test(s);
 }
 
+/** English is folded the same way as roman Hindi. That turns "phone" into
+ *  "fone" and "water" into "vater", which looks odd but is harmless: the
+ *  query goes through the identical fold, so both sides always agree. */
+function foldEnglish(s) {
+  return fold(String(s || '').replace(/[\/()]/g, ' '));
+}
+
 /** Precompute everything a row will be searched on. Done once at load. */
 export function indexRow(p) {
   const hi = normDev(p.hindi);
   const mr = normDev(p.marathi);
   const romanHi = fold(p.roman || toRoman(p.hindi));
   const romanMr = fold(toRoman(p.marathi));
+  const en = foldEnglish(p.english);
   return {
     ...p,
     _dev: [hi, mr],
-    _rom: [romanHi, romanMr],
+    _rom: [romanHi, romanMr, en],
+    _en: en,
     _devWords: [...new Set([...hi.split(' '), ...mr.split(' ')])].filter(Boolean),
-    _romWords: [...new Set([...romanHi.split(' '), ...romanMr.split(' ')])].filter(Boolean),
+    _romWords: [...new Set([
+      ...romanHi.split(' '), ...romanMr.split(' '), ...en.split(' '),
+    ])].filter(Boolean),
   };
 }
 
@@ -163,6 +174,16 @@ function tokenScore(token, row, dev) {
   return best;
 }
 
+// English function words carry no signal and match almost every row, so a
+// query like "I am hungry" would otherwise rank on "I". Drop them whenever
+// the query has something more substantial to go on.
+const STOP = new Set([
+  'a', 'an', 'the', 'i', 'im', 'me', 'my', 'you', 'your', 'he', 'she', 'it',
+  'we', 'they', 'is', 'am', 'are', 'was', 'be', 'do', 'does', 'did', 'to',
+  'of', 'in', 'on', 'at', 'for', 'and', 'or', 'this', 'that', 'have', 'has',
+  'can', 'will', 'would', 'please', 'some', 'any',
+]);
+
 /**
  * Rank rows for a query. Every word in the query must match something,
  * so "kitne ka" narrows rather than widens.
@@ -174,7 +195,14 @@ export function searchRows(rows, query, { situation = null } = {}) {
   }
 
   const dev = isDevanagari(raw);
-  const tokens = (dev ? normDev(raw) : fold(raw)).split(' ').filter(Boolean);
+  // Keep the query whole as well as in pieces: an exact phrase match should
+  // always beat a scattering of separate word matches.
+  const phrase = dev ? normDev(raw) : fold(raw);
+  let tokens = (dev ? normDev(raw) : fold(raw)).split(' ').filter(Boolean);
+  if (!dev && tokens.length > 1) {
+    const solid = tokens.filter(t => !STOP.has(t));
+    if (solid.length) tokens = solid;
+  }
   if (!tokens.length) return [];
 
   const scored = [];
@@ -192,6 +220,13 @@ export function searchRows(rows, query, { situation = null } = {}) {
     // a short phrase matched fully beats a long one matched partly.
     const len = Math.max(1, (dev ? row._dev[0] : row._rom[0]).length);
     let score = (total / tokens.length) + Math.min(1, raw.length / len);
+    if (phrase.includes(' ')) {
+      const haystacks = dev ? row._dev : row._rom;
+      for (const h of haystacks) {
+        if (h === phrase) { score += 4; break; }
+        if (h.includes(phrase)) { score += 2; break; }
+      }
+    }
     if (row.tier === 'corpus') score *= 0.8;
     if (row.status === 'ok') score *= 1.08;
     scored.push({ row, score });

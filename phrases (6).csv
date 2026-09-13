@@ -1,0 +1,612 @@
+hindi,marathi,english,roman,situation,note,status
+नमस्ते,नमस्कार,hello / greetings,namaste,greeting,,draft
+सुप्रभात,शुभ सकाळ,good morning,suprabhat,greeting,,draft
+शुभ रात्रि,शुभ रात्री,good night,shubh ratri,greeting,,draft
+आप कैसे हैं?,तुम्ही कसे आहात?,how are you? (to a man or group),aap kaise hain,greeting,to a man or a group,draft
+आप कैसी हैं?,तुम्ही कशा आहात?,how are you? (to a woman),aap kaisi hain,greeting,to a woman,draft
+तुम कैसे हो?,तू कसा आहेस?,"how are you? (casual, to a man)",tum kaise ho,greeting,casual — to a man,draft
+तुम कैसी हो?,तू कशी आहेस?,"how are you? (casual, to a woman)",tum kaisi ho,greeting,casual — to a woman,draft
+क्या हाल है?,काय कसं काय?,how's it going?,kya haal hai,greeting,very casual,draft
+मैं ठीक हूँ,मी ठीक आहे,I'm fine,main theek hoon,greeting,,draft
+सब ठीक है,सगळं ठीक आहे,everything's fine,sab theek hai,greeting,,draft
+और आप?,आणि तुम्ही?,and you?,aur aap,greeting,,draft
+बहुत दिनों बाद मिले,खूप दिवसांनी भेटलो,long time no see,bahut dinon baad mile,greeting,male speaker — female says भेटले,draft
+फिर मिलेंगे,पुन्हा भेटू,see you again,phir milenge,greeting,,draft
+कल मिलते हैं,उद्या भेटू,see you tomorrow,kal milte hain,greeting,,draft
+अच्छा चलता हूँ,चला मी येतो,"right, I'll be off",achha chalta hoon,greeting,Marathi says 'I'll come' when leaving — female: येते,draft
+ध्यान रखना,काळजी घ्या,take care,dhyan rakhna,greeting,,draft
+स्वागत है,स्वागत आहे,welcome,swagat hai,greeting,,draft
+आइए,या,come in / please come,aaiye,greeting,,draft
+बैठिए,बसा,please sit,baithiye,greeting,,draft
+आपका नाम क्या है?,तुमचं नाव काय आहे?,what is your name?,aapka naam kya hai,intro,,draft
+मेरा नाम ___ है,माझं नाव ___ आहे,my name is ___,mera naam hai,intro,,draft
+आप कहाँ से हैं?,तुम्ही कुठून आलात?,where are you from?,aap kahan se hain,intro,,draft
+मैं मुंबई से हूँ,मी मुंबईचा आहे,I'm from Mumbai,main mumbai se hoon,intro,male — female says मुंबईची,draft
+आपसे मिलकर खुशी हुई,तुम्हाला भेटून आनंद झाला,pleased to meet you,aapse milkar khushi hui,intro,,draft
+आप क्या करते हैं?,तुम्ही काय करता?,what do you do?,aap kya karte hain,intro,,draft
+मैं नौकरी करता हूँ,मी नोकरी करतो,I have a job,main naukri karta hoon,intro,male — female करते,draft
+मैं पढ़ता हूँ,मी शिकतो,I'm studying,main padhta hoon,intro,male — female शिकते,draft
+आप कहाँ रहते हैं?,तुम्ही कुठे राहता?,where do you live?,aap kahan rehte hain,intro,,draft
+मैं यहीं रहता हूँ,मी इथेच राहतो,I live right here,main yahin rehta hoon,intro,male — female राहते,draft
+आपकी उम्र क्या है?,तुमचं वय काय आहे?,how old are you?,aapki umra kya hai,intro,,draft
+क्या आप शादीशुदा हैं?,तुमचं लग्न झालं आहे का?,are you married?,kya aap shaadishuda hain,intro,,draft
+मैं मराठी सीख रहा हूँ,मी मराठी शिकतोय,I'm learning Marathi,main marathi seekh raha hoon,intro,male — female शिकतेय,draft
+मुझे थोड़ी मराठी आती है,मला थोडं मराठी येतं,I know a little Marathi,mujhe thodi marathi aati hai,intro,,draft
+मुझे मराठी नहीं आती,मला मराठी येत नाही,I don't know Marathi,mujhe marathi nahi aati,intro,,draft
+हाँ,हो,yes,haan,talk,,draft
+नहीं,नाही,no,nahi,talk,,draft
+ठीक है,ठीक आहे,okay,theek hai,talk,बरं is the casual one,draft
+अच्छा,बरं,I see / alright,achha,talk,,draft
+शायद,कदाचित,maybe,shayad,talk,,draft
+ज़रूर,नक्की,certainly,zaroor,talk,,draft
+बिल्कुल,अगदी,absolutely,bilkul,talk,,draft
+क्यों?,का?,why?,kyon,talk,,draft
+क्या?,काय?,what?,kya,talk,,draft
+कैसे?,कसं?,how?,kaise,talk,,draft
+कहाँ?,कुठे?,where?,kahan,talk,,draft
+कब?,कधी?,when?,kab,talk,,draft
+कौन?,कोण?,who?,kaun,talk,,draft
+कितना?,किती?,how much?,kitna,talk,,draft
+कौन सा?,कोणता?,which one?,kaun sa,talk,,draft
+मुझे समझ नहीं आया,मला समजलं नाही,I didn't understand,mujhe samajh nahi aaya,talk,,draft
+समझ गया,समजलं,got it,samajh gaya,talk,,draft
+धीरे बोलिए,हळू बोला,please speak slowly,dheere boliye,talk,,draft
+फिर से बोलिए,पुन्हा सांगा,please say that again,phir se boliye,talk,,draft
+क्या आप हिंदी बोलते हैं?,तुम्ही हिंदी बोलता का?,do you speak Hindi?,kya aap hindi bolte hain,talk,,draft
+इसे मराठी में क्या कहते हैं?,याला मराठीत काय म्हणतात?,what is this called in Marathi?,ise marathi mein kya kehte hain,talk,,draft
+इसका मतलब क्या है?,याचा अर्थ काय?,what does this mean?,iska matlab kya hai,talk,,draft
+मुझे पता नहीं,मला माहीत नाही,I don't know,mujhe pata nahi,talk,,draft
+मुझे लगता है,मला वाटतं,I think,mujhe lagta hai,talk,,draft
+मैं सहमत हूँ,मी सहमत आहे,I agree,main sehmat hoon,talk,,draft
+सच में?,खरंच?,really?,sach mein,talk,,draft
+बहुत अच्छा,खूप छान,very good,bahut achha,talk,,draft
+वाह!,वा!,wow!,waah,talk,,draft
+चलो,चला,let's go,chalo,talk,,draft
+रुको,थांबा,wait,ruko,talk,,draft
+देखो,बघा,look,dekho,talk,,draft
+सुनो,ऐका,listen,suno,talk,,draft
+बताओ,सांगा,tell me,batao,talk,,draft
+एक मिनट,एक मिनिट,one minute,ek minute,talk,,draft
+जल्दी करो,लवकर करा,hurry up,jaldi karo,talk,,draft
+आराम से,सावकाश,take it easy,aaram se,talk,,draft
+मैं व्यस्त हूँ,मी कामात आहे,I'm busy,main vyast hoon,talk,बिझी आहे is what people say,draft
+मुझे देर हो रही है,मला उशीर होतोय,I'm running late,mujhe der ho rahi hai,talk,,draft
+कोई दिक्कत नहीं,काही प्रॉब्लेम नाही,no problem,koi dikkat nahi,talk,,draft
+मज़ाक कर रहा हूँ,गंमत करतोय,I'm joking,mazaak kar raha hoon,talk,male — female करतेय,draft
+धन्यवाद,धन्यवाद,thank you,dhanyavaad,courtesy,आभारी आहे is warmer,draft
+बहुत-बहुत धन्यवाद,खूप खूप आभार,thank you very much,bahut bahut dhanyavaad,courtesy,,draft
+माफ़ कीजिए,माफ करा,sorry / excuse me,maaf kijiye,courtesy,,draft
+मुझे खेद है,मला वाईट वाटतं,I'm sorry,mujhe khed hai,courtesy,,draft
+कृपया,कृपया,please,kripaya,courtesy,rarely said aloud — the polite verb ending does the work,draft
+कोई बात नहीं,काही हरकत नाही,it's alright,koi baat nahi,courtesy,,draft
+बधाई हो,अभिनंदन,congratulations,badhai ho,courtesy,,draft
+शुभकामनाएँ,शुभेच्छा,best wishes,shubhkamnayen,courtesy,,draft
+जन्मदिन मुबारक,वाढदिवसाच्या शुभेच्छा,happy birthday,janmdin mubarak,courtesy,,draft
+दिवाली की शुभकामनाएँ,दिवाळीच्या शुभेच्छा,happy Diwali,diwali ki shubhkamnayen,courtesy,,draft
+नया साल मुबारक,नवीन वर्षाच्या शुभेच्छा,happy new year,naya saal mubarak,courtesy,,draft
+क्षमा करें,क्षमा करा,pardon me (formal),kshama karen,courtesy,formal,draft
+एक,एक,one,ek,numbers,,draft
+दो,दोन,two,do,numbers,,draft
+तीन,तीन,three,teen,numbers,,draft
+चार,चार,four,chaar,numbers,,draft
+पाँच,पाच,five,paanch,numbers,,draft
+छह,सहा,six,chhah,numbers,,draft
+सात,सात,seven,saat,numbers,,draft
+आठ,आठ,eight,aath,numbers,,draft
+नौ,नऊ,nine,nau,numbers,,draft
+दस,दहा,ten,das,numbers,,draft
+ग्यारह,अकरा,eleven,gyarah,numbers,,draft
+बारह,बारा,twelve,barah,numbers,,draft
+पंद्रह,पंधरा,fifteen,pandrah,numbers,,draft
+बीस,वीस,twenty,bees,numbers,,draft
+पच्चीस,पंचवीस,twenty-five,pachees,numbers,,draft
+तीस,तीस,thirty,tees,numbers,,draft
+चालीस,चाळीस,forty,chalees,numbers,,draft
+पचास,पन्नास,fifty,pachas,numbers,,draft
+साठ,साठ,sixty,saath,numbers,,draft
+सत्तर,सत्तर,seventy,sattar,numbers,,draft
+अस्सी,ऐंशी,eighty,assi,numbers,,draft
+नब्बे,नव्वद,ninety,nabbe,numbers,,draft
+सौ,शंभर,hundred,sau,numbers,,draft
+पाँच सौ,पाचशे,five hundred,paanch sau,numbers,,draft
+हज़ार,हजार,thousand,hazaar,numbers,,draft
+लाख,लाख,hundred thousand,lakh,numbers,,draft
+आधा,अर्धा,half,aadha,numbers,,draft
+पहला,पहिला,first,pehla,numbers,,draft
+दूसरा,दुसरा,second,doosra,numbers,,draft
+आखिरी,शेवटचा,last,aakhri,numbers,,draft
+आज,आज,today,aaj,time,,draft
+कल (आने वाला),उद्या,tomorrow,kal,time,tomorrow,draft
+कल (बीता हुआ),काल,yesterday,kal,time,yesterday,draft
+परसों,परवा,day after / day before,parson,time,,draft
+अभी,आत्ता,right now,abhi,time,,draft
+बाद में,नंतर,later,baad mein,time,,draft
+पहले,आधी,before / earlier,pehle,time,,draft
+सुबह,सकाळ,morning,subah,time,,draft
+दोपहर,दुपार,afternoon,dopahar,time,,draft
+शाम,संध्याकाळ,evening,shaam,time,,draft
+रात,रात्र,night,raat,time,,draft
+हमेशा,नेहमी,always,hamesha,time,,draft
+कभी नहीं,कधीच नाही,never,kabhi nahi,time,,draft
+कभी-कभी,कधी कधी,sometimes,kabhi kabhi,time,,draft
+रोज़,रोज,every day,roz,time,,draft
+हफ़्ता,आठवडा,week,hafta,time,,draft
+महीना,महिना,month,mahina,time,,draft
+साल,वर्ष,year,saal,time,,draft
+घंटा,तास,hour,ghanta,time,,draft
+मिनट,मिनिट,minute,minute,time,,draft
+कितने बजे हैं?,किती वाजले?,what time is it?,kitne baje hain,time,,draft
+पाँच बजे हैं,पाच वाजले,it's five o'clock,paanch baje hain,time,,draft
+साढ़े चार,साडे चार,half past four,saadhe chaar,time,,draft
+सोमवार,सोमवार,Monday,somvar,time,,draft
+मंगलवार,मंगळवार,Tuesday,mangalvar,time,,draft
+बुधवार,बुधवार,Wednesday,budhvar,time,,draft
+गुरुवार,गुरुवार,Thursday,guruvar,time,,draft
+शुक्रवार,शुक्रवार,Friday,shukravar,time,,draft
+शनिवार,शनिवार,Saturday,shanivar,time,,draft
+रविवार,रविवार,Sunday,ravivar,time,,draft
+छुट्टी,सुट्टी,holiday / day off,chhutti,time,,draft
+माँ,आई,mother,maa,family,,draft
+पिता,बाबा,father,pita,family,वडील is the formal word,draft
+भाई,भाऊ,brother,bhai,family,,draft
+बहन,बहीण,sister,behen,family,,draft
+बड़ा भाई,दादा,elder brother,bada bhai,family,दादा means elder brother in Marathi — not grandfather,draft
+बड़ी बहन,ताई,elder sister,badi behen,family,,draft
+छोटा भाई,लहान भाऊ,younger brother,chhota bhai,family,,draft
+दादा (पिता के पिता),आजोबा,paternal grandfather,dada,family,,draft
+दादी,आजी,paternal grandmother,dadi,family,,draft
+नाना,आजोबा,maternal grandfather,nana,family,,draft
+नानी,आजी,maternal grandmother,nani,family,,draft
+चाचा,काका,paternal uncle,chacha,family,,draft
+चाची,काकू,paternal aunt,chachi,family,,draft
+मामा,मामा,maternal uncle,mama,family,,draft
+मामी,मामी,maternal aunt,mami,family,,draft
+बुआ,आत्या,father's sister,bua,family,,draft
+मौसी,मावशी,mother's sister,mausi,family,,draft
+पति,नवरा,husband,pati,family,,draft
+पत्नी,बायको,wife,patni,family,,draft
+बेटा,मुलगा,son,beta,family,,draft
+बेटी,मुलगी,daughter,beti,family,,draft
+बच्चा,मूल,child,bachcha,family,,draft
+दोस्त,मित्र,friend,dost,family,मैत्रीण for a female friend,draft
+परिवार,कुटुंब,family,parivaar,family,,draft
+यह कितने का है?,हे कितीला आहे?,how much is this?,yeh kitne ka hai,market,,draft
+किलो कितने का?,किलो कितीला?,how much per kilo?,kilo kitne ka,market,,draft
+बहुत महँगा है,खूप महाग आहे,that's very expensive,bahut mehenga hai,market,,draft
+थोड़ा कम कीजिए,थोडं कमी करा,come down a little,thoda kam kijiye,market,,draft
+सही दाम बताइए,बरोबर भाव सांगा,give me your best price,sahi daam bataiye,market,,draft
+मुझे यह चाहिए,मला हे हवं आहे,I want this,mujhe yeh chahiye,market,,draft
+मुझे यह नहीं चाहिए,मला हे नको,I don't want this,mujhe yeh nahi chahiye,market,,draft
+एक किलो दीजिए,एक किलो द्या,give me one kilo,ek kilo dijiye,market,,draft
+आधा किलो,अर्धा किलो,half a kilo,aadha kilo,market,,draft
+ताज़ा है?,ताजं आहे का?,is it fresh?,taaza hai,market,,draft
+यह खराब है,हे खराब आहे,this one's bad,yeh kharab hai,market,,draft
+और कुछ?,आणखी काही?,anything else?,aur kuchh,market,,draft
+बस इतना ही,एवढंच,that's all,bas itna hi,market,,draft
+छुट्टे हैं?,सुटे आहेत का?,do you have change?,chhutte hain,market,,draft
+छुट्टे नहीं हैं,सुटे नाहीत,I don't have change,chhutte nahi hain,market,,draft
+पैसे वापस दीजिए,पैसे परत द्या,give me the change,paise wapas dijiye,market,,draft
+थैली दीजिए,पिशवी द्या,give me a bag,thaili dijiye,market,,draft
+पैसे,पैसे,money,paise,market,,draft
+सब्ज़ी,भाजी,vegetables,sabzi,market,,draft
+फल,फळ,fruit,phal,market,,draft
+आलू,बटाटा,potato,aloo,market,,draft
+प्याज़,कांदा,onion,pyaaz,market,,draft
+टमाटर,टोमॅटो,tomato,tamatar,market,,draft
+मिर्च,मिरची,chilli,mirch,market,,draft
+धनिया,कोथिंबीर,coriander,dhaniya,market,,draft
+नींबू,लिंबू,lemon,nimbu,market,,draft
+केला,केळं,banana,kela,market,,draft
+आम,आंबा,mango,aam,market,,draft
+सेब,सफरचंद,apple,seb,market,,draft
+दूध,दूध,milk,doodh,market,,draft
+अंडा,अंडं,egg,anda,market,,draft
+चावल (कच्चा),तांदूळ,rice (uncooked),chawal,market,cooked rice is भात,draft
+आटा,पीठ,flour,aata,market,,draft
+दाल,डाळ,lentils,daal,market,,draft
+तेल,तेल,oil,tel,market,,draft
+नमक,मीठ,salt,namak,market,,draft
+चीनी,साखर,sugar,cheeni,market,,draft
+चाय पत्ती,चहा पावडर,tea leaves,chai patti,market,,draft
+मुझे भूख लगी है,मला भूक लागली आहे,I'm hungry,mujhe bhookh lagi hai,food,,draft
+मुझे प्यास लगी है,मला तहान लागली आहे,I'm thirsty,mujhe pyaas lagi hai,food,,draft
+पानी दीजिए,पाणी द्या,please give me water,paani dijiye,food,,draft
+खाना तैयार है?,जेवण तयार आहे का?,is the food ready?,khana taiyar hai,food,,draft
+खाना बहुत अच्छा है,जेवण खूप छान आहे,the food is very good,khana bahut achha hai,food,,draft
+बहुत तीखा है,खूप तिखट आहे,it's very spicy,bahut teekha hai,food,,draft
+कम तीखा बनाइए,कमी तिखट करा,make it less spicy,kam teekha banaiye,food,,draft
+मैं शाकाहारी हूँ,मी शाकाहारी आहे,I'm vegetarian,main shakahari hoon,food,,draft
+मेन्यू दीजिए,मेन्यू द्या,"the menu, please",menu dijiye,food,,draft
+बिल लाइए,बिल आणा,bring the bill,bill laiye,food,,draft
+पेट भर गया,पोट भरलं,I'm full,pet bhar gaya,food,,draft
+और दीजिए,अजून द्या,give me some more,aur dijiye,food,,draft
+बस (काफ़ी है),पुरे,that's enough,bas,food,enough,draft
+नाश्ता,न्याहारी,breakfast,nashta,food,,draft
+खाना (भोजन),जेवण,food / a meal,khana,food,,draft
+चाय,चहा,tea,chai,food,,draft
+कॉफ़ी,कॉफी,coffee,coffee,food,,draft
+रोटी,पोळी,flatbread,roti,food,,draft
+चावल (पका),भात,cooked rice,chawal,food,,draft
+सब्ज़ी (पकी),भाजी,cooked vegetable dish,sabzi,food,,draft
+दही,दही,curd,dahi,food,,draft
+मीठा,गोड,sweet,meetha,food,,draft
+नमकीन,खारट,salty,namkeen,food,,draft
+गरम,गरम,hot,garam,food,,draft
+ठंडा,थंड,cold,thanda,food,,draft
+स्वादिष्ट,चविष्ट,delicious,swadisht,food,,draft
+भरपेट खाइए,पोटभर जेवा,eat your fill,bharpet khaiye,food,,draft
+यह कहाँ है?,हे कुठे आहे?,where is this?,yeh kahan hai,travel,,draft
+स्टेशन कहाँ है?,स्टेशन कुठे आहे?,where is the station?,station kahan hai,travel,,draft
+कितनी दूर है?,किती लांब आहे?,how far is it?,kitni door hai,travel,,draft
+कितना समय लगेगा?,किती वेळ लागेल?,how long will it take?,kitna samay lagega,travel,,draft
+सीधे जाइए,सरळ जा,go straight,seedhe jaiye,travel,,draft
+बाएँ मुड़िए,डावीकडे वळा,turn left,baayen mudiye,travel,,draft
+दाएँ मुड़िए,उजवीकडे वळा,turn right,daayen mudiye,travel,,draft
+पास में,जवळ,nearby,paas mein,travel,,draft
+दूर,लांब,far,door,travel,,draft
+सामने,समोर,in front,saamne,travel,,draft
+पीछे,मागे,behind,peechhe,travel,,draft
+ऊपर,वर,above / up,oopar,travel,,draft
+नीचे,खाली,below / down,neeche,travel,,draft
+यहाँ,इथे,here,yahan,travel,,draft
+वहाँ,तिथे,there,wahan,travel,,draft
+मैं रास्ता भूल गया,मी रस्ता चुकलो,I've lost my way,main rasta bhool gaya,travel,male — female चुकले,draft
+यह रास्ता कहाँ जाता है?,हा रस्ता कुठे जातो?,where does this road go?,yeh rasta kahan jata hai,travel,,draft
+यहाँ रोकिए,इथे थांबा,stop here,yahan rokiye,travel,,draft
+कितना हुआ?,किती झाले?,how much is it?,kitna hua,travel,,draft
+मीटर से चलिए,मीटरने चला,go by the meter,meter se chaliye,travel,,draft
+शेयर में?,शेअरमध्ये?,shared ride?,share mein,travel,,draft
+जल्दी चलिए,लवकर चला,please go quickly,jaldi chaliye,travel,,draft
+आराम से चलाइए,सावकाश चालवा,drive slowly,aaram se chalaiye,travel,,draft
+अगला स्टेशन कौन सा है?,पुढचं स्टेशन कोणतं?,which is the next station?,agla station kaun sa hai,travel,,draft
+यह ट्रेन कहाँ जाती है?,ही ट्रेन कुठे जाते?,where does this train go?,yeh train kahan jaati hai,travel,,draft
+टिकट कहाँ मिलेगा?,तिकीट कुठे मिळेल?,where do I get a ticket?,ticket kahan milega,travel,,draft
+एक टिकट दीजिए,एक तिकीट द्या,"one ticket, please",ek ticket dijiye,travel,,draft
+वापसी टिकट,परतीचं तिकीट,return ticket,wapsi ticket,travel,,draft
+बस कब आएगी?,बस कधी येईल?,when will the bus come?,bus kab aayegi,travel,,draft
+थोड़ा खिसकिए,जरा सरका,move over a little,thoda khiskiye,travel,,draft
+उतरना है,उतरायचं आहे,I need to get off,utarna hai,travel,,draft
+रास्ता दीजिए,वाट द्या,let me through,rasta dijiye,travel,,draft
+रिक्शा,रिक्षा,auto rickshaw,rickshaw,travel,,draft
+गाड़ी,गाडी,vehicle / train,gaadi,travel,,draft
+सड़क,रस्ता,road,sadak,travel,,draft
+पुल,पूल,bridge,pul,travel,,draft
+मोड़,वळण,turning,mod,travel,,draft
+घर पर कोई है?,घरी कोणी आहे का?,is anyone home?,ghar par koi hai,home,,draft
+अंदर आइए,आत या,come inside,andar aaiye,home,,draft
+दरवाज़ा बंद कीजिए,दार बंद करा,close the door,darwaza band kijiye,home,,draft
+लाइट बंद करो,लाईट बंद कर,turn off the light,light band karo,home,casual,draft
+पंखा चालू करो,पंखा चालू कर,turn on the fan,pankha chalu karo,home,casual,draft
+पानी नहीं आ रहा,पाणी येत नाहीये,there's no water,paani nahi aa raha,home,,draft
+बिजली गई,लाईट गेली,the power's gone,bijli gayi,home,,draft
+कचरा,कचरा,rubbish,kachra,home,,draft
+सफ़ाई,साफसफाई,cleaning,safai,home,,draft
+कपड़े,कपडे,clothes,kapde,home,,draft
+बर्तन,भांडी,dishes,bartan,home,,draft
+चाबी,किल्ली,key,chaabi,home,,draft
+कमरा,खोली,room,kamra,home,,draft
+रसोई,स्वयंपाकघर,kitchen,rasoi,home,,draft
+बाथरूम,बाथरूम,bathroom,bathroom,home,,draft
+छत,गच्ची,terrace / roof,chhat,home,,draft
+सीढ़ी,जिना,stairs,seedhi,home,,draft
+लिफ़्ट,लिफ्ट,lift,lift,home,,draft
+किराया,भाडं,rent,kiraya,home,,draft
+मकान मालिक,घरमालक,landlord,makaan malik,home,,draft
+पड़ोसी,शेजारी,neighbour,padosi,home,,draft
+काम वाली,कामवाली,house help,kaam wali,home,मावशी is the respectful way to address her,draft
+दूध वाला,दूधवाला,milkman,doodh wala,home,,draft
+सोसाइटी,सोसायटी,housing society,society,home,,draft
+मीटिंग कब है?,मीटिंग कधी आहे?,when is the meeting?,meeting kab hai,office,,draft
+काम हो गया?,काम झालं का?,is the work done?,kaam ho gaya,office,,draft
+काम बाकी है,काम बाकी आहे,there's work left,kaam baaki hai,office,,draft
+मैं छुट्टी पर हूँ,मी सुट्टीवर आहे,I'm on leave,main chhutti par hoon,office,,draft
+कल छुट्टी है,उद्या सुट्टी आहे,tomorrow is a holiday,kal chhutti hai,office,,draft
+साहब आए हैं?,साहेब आले आहेत का?,has sir come in?,sahab aaye hain,office,,draft
+फ़ाइल कहाँ है?,फाईल कुठे आहे?,where is the file?,file kahan hai,office,,draft
+साइन कीजिए,सही करा,please sign,sign kijiye,office,,draft
+ईमेल भेज दिया,ईमेल पाठवला,I've sent the email,email bhej diya,office,,draft
+कॉल कीजिए,फोन करा,please call,call kijiye,office,,draft
+मैं बाद में बात करता हूँ,मी नंतर बोलतो,I'll talk later,main baad mein baat karta hoon,office,male — female बोलते,draft
+तनख़्वाह,पगार,salary,tankhwah,office,,draft
+दफ़्तर,ऑफिस,office,daftar,office,कार्यालय is the formal word,draft
+मालिक,मालक,owner / boss,malik,office,,draft
+सहकर्मी,सहकारी,colleague,sahkarmi,office,,draft
+हैलो,हॅलो,hello (on the phone),hello,phone,,draft
+कौन बोल रहा है?,कोण बोलतंय?,who's speaking?,kaun bol raha hai,phone,,draft
+मैं ___ बोल रहा हूँ,मी ___ बोलतोय,this is ___ speaking,main bol raha hoon,phone,male — female बोलतेय,draft
+आवाज़ नहीं आ रही,आवाज येत नाहीये,I can't hear you,awaaz nahi aa rahi,phone,,draft
+बाद में कॉल करता हूँ,नंतर फोन करतो,I'll call later,baad mein call karta hoon,phone,male — female करते,draft
+नंबर क्या है?,नंबर काय आहे?,what's the number?,number kya hai,phone,,draft
+मिस्ड कॉल दे दो,मिस कॉल दे,give me a missed call,missed call de do,phone,casual,draft
+फ़ोन बंद है,फोन बंद आहे,the phone is off,phone band hai,phone,,draft
+नेटवर्क नहीं है,नेटवर्क नाहीये,there's no network,network nahi hai,phone,,draft
+मैसेज कर दो,मेसेज कर,send a message,message kar do,phone,casual,draft
+मेरी तबीयत ठीक नहीं है,माझी तब्येत बरी नाही,I'm not feeling well,meri tabiyat theek nahi hai,health,,draft
+मुझे बुखार है,मला ताप आहे,I have a fever,mujhe bukhar hai,health,,draft
+सिर दर्द हो रहा है,डोकं दुखतंय,I have a headache,sir dard ho raha hai,health,,draft
+पेट दर्द हो रहा है,पोट दुखतंय,I have a stomach ache,pet dard ho raha hai,health,,draft
+खाँसी है,खोकला आहे,I have a cough,khansi hai,health,,draft
+सर्दी हो गई,सर्दी झाली,I've caught a cold,sardi ho gayi,health,,draft
+चक्कर आ रहे हैं,चक्कर येतायत,I feel dizzy,chakkar aa rahe hain,health,,draft
+दवा,औषध,medicine,dawa,health,,draft
+डॉक्टर,डॉक्टर,doctor,doctor,health,,draft
+अस्पताल,हॉस्पिटल,hospital,aspatal,health,रुग्णालय is the formal word,draft
+दवाई की दुकान,मेडिकल,chemist / pharmacy,dawai ki dukaan,health,,draft
+यह दवा कब लेनी है?,हे औषध कधी घ्यायचं?,when do I take this medicine?,yeh dawa kab leni hai,health,,draft
+खाने के बाद,जेवणानंतर,after meals,khane ke baad,health,,draft
+खाने से पहले,जेवणाआधी,before meals,khane se pehle,health,,draft
+आराम कीजिए,आराम करा,please rest,aaram kijiye,health,,draft
+जल्दी ठीक हो जाइए,लवकर बरे व्हा,get well soon,jaldi theek ho jaiye,health,,draft
+दर्द,दुखणं,pain,dard,health,,draft
+चोट,जखम,injury,chot,health,,draft
+आँख,डोळा,eye,aankh,health,,draft
+कान,कान,ear,kaan,health,,draft
+नाक,नाक,nose,naak,health,,draft
+हाथ,हात,hand,haath,health,,draft
+पैर,पाय,leg / foot,pair,health,,draft
+पीठ,पाठ,back,peeth,health,,draft
+दाँत,दात,tooth,daant,health,,draft
+मुझे मदद चाहिए,मला मदत हवी आहे,I need help,mujhe madad chahiye,help,,draft
+डॉक्टर को बुलाइए,डॉक्टरांना बोलवा,call a doctor,doctor ko bulaiye,help,,draft
+पुलिस को बुलाइए,पोलिसांना बोलवा,call the police,police ko bulaiye,help,,draft
+एम्बुलेंस बुलाइए,अँब्युलन्स बोलवा,call an ambulance,ambulance bulaiye,help,,draft
+आग लगी है,आग लागली आहे,there's a fire,aag lagi hai,help,,draft
+चोर!,चोर!,thief!,chor,help,,draft
+बचाओ!,वाचवा!,help!,bachao,help,,draft
+मेरा फ़ोन खो गया,माझा फोन हरवला,I've lost my phone,mera phone kho gaya,help,,draft
+मेरा बटुआ खो गया,माझं पाकीट हरवलं,I've lost my wallet,mera batua kho gaya,help,,draft
+मैं खो गया हूँ,मी हरवलो आहे,I'm lost,main kho gaya hoon,help,male — female हरवले,draft
+जल्दी आइए,लवकर या,come quickly,jaldi aaiye,help,,draft
+सावधान,सावध,be careful,savdhan,help,,draft
+ख़तरा,धोका,danger,khatra,help,,draft
+पुलिस स्टेशन कहाँ है?,पोलीस स्टेशन कुठे आहे?,where is the police station?,police station kahan hai,help,,draft
+यह मुझे दिखाइए,हे मला दाखवा,show me this,yeh mujhe dikhaiye,shopping,,draft
+दूसरा रंग है?,दुसरा रंग आहे का?,do you have another colour?,doosra rang hai,shopping,,draft
+बड़ा साइज़ है?,मोठा साईज आहे का?,do you have a bigger size?,bada size hai,shopping,,draft
+छोटा साइज़,लहान साईज,smaller size,chhota size,shopping,,draft
+ट्राई कर सकता हूँ?,घालून बघू का?,can I try it on?,try kar sakta hoon,shopping,for clothes,draft
+यह पसंद आया,हे आवडलं,I like this,yeh pasand aaya,shopping,,draft
+यह पसंद नहीं आया,हे आवडलं नाही,I don't like this,yeh pasand nahi aaya,shopping,,draft
+कार्ड चलेगा?,कार्ड चालेल का?,do you take card?,card chalega,shopping,,draft
+यूपीआई चलेगा?,यूपीआय चालेल का?,do you take UPI?,UPI chalega,shopping,,draft
+बिल दीजिए,बिल द्या,give me the bill,bill dijiye,shopping,,draft
+वापस कर सकते हैं?,परत करता येईल का?,can this be returned?,wapas kar sakte hain,shopping,,draft
+दुकान कब खुलती है?,दुकान कधी उघडतं?,when does the shop open?,dukaan kab khulti hai,shopping,,draft
+दुकान कब बंद होती है?,दुकान कधी बंद होतं?,when does the shop close?,dukaan kab band hoti hai,shopping,,draft
+कपड़ा,कापड,cloth,kapda,shopping,,draft
+साड़ी,साडी,saree,saree,shopping,,draft
+कमीज़,शर्ट,shirt,kameez,shopping,,draft
+जूते,बूट,shoes,joote,shopping,,draft
+चप्पल,चप्पल,slippers,chappal,shopping,,draft
+बैग,बॅग,bag,bag,shopping,,draft
+लाल,लाल,red,laal,shopping,,draft
+नीला,निळा,blue,neela,shopping,,draft
+हरा,हिरवा,green,hara,shopping,,draft
+पीला,पिवळा,yellow,peela,shopping,,draft
+सफ़ेद,पांढरा,white,safed,shopping,,draft
+काला,काळा,black,kaala,shopping,,draft
+आज गर्मी है,आज गरम आहे,it's hot today,aaj garmi hai,weather,उकडतंय — it's sweltering,draft
+आज ठंड है,आज थंडी आहे,it's cold today,aaj thand hai,weather,,draft
+बारिश हो रही है,पाऊस पडतोय,it's raining,baarish ho rahi hai,weather,,draft
+बारिश आएगी,पाऊस येईल,it's going to rain,baarish aayegi,weather,,draft
+छाता लो,छत्री घे,take an umbrella,chhata lo,weather,casual,draft
+मौसम अच्छा है,हवा छान आहे,the weather is nice,mausam achha hai,weather,,draft
+बहुत उमस है,खूप दमट आहे,it's very humid,bahut umas hai,weather,,draft
+धूप,ऊन,sunshine,dhoop,weather,,draft
+हवा,वारा,wind,hawa,weather,,draft
+बादल,ढग,clouds,baadal,weather,,draft
+मानसून,पावसाळा,monsoon,monsoon,weather,,draft
+गर्मी का मौसम,उन्हाळा,summer,garmi ka mausam,weather,,draft
+सर्दी का मौसम,हिवाळा,winter,sardi ka mausam,weather,,draft
+मैं खुश हूँ,मी खूश आहे,I'm happy,main khush hoon,feelings,आनंदी is the pure Marathi,draft
+मैं उदास हूँ,मी उदास आहे,I'm sad,main udaas hoon,feelings,,draft
+मुझे गुस्सा आ रहा है,मला राग येतोय,I'm getting angry,mujhe gussa aa raha hai,feelings,,draft
+मैं थक गया,मी दमलो,I'm tired,main thak gaya,feelings,male — female दमले,draft
+मुझे नींद आ रही है,मला झोप येतेय,I'm sleepy,mujhe neend aa rahi hai,feelings,,draft
+मुझे डर लग रहा है,मला भीती वाटतेय,I'm scared,mujhe dar lag raha hai,feelings,,draft
+मुझे अच्छा लगा,मला छान वाटलं,I liked it,mujhe achha laga,feelings,,draft
+मुझे बुरा लगा,मला वाईट वाटलं,I felt bad,mujhe bura laga,feelings,,draft
+मैं बोर हो रहा हूँ,मला कंटाळा आलाय,I'm bored,main bore ho raha hoon,feelings,,draft
+मुझे याद आती है,मला आठवण येते,I miss you,mujhe yaad aati hai,feelings,,draft
+मुझे तुमसे प्यार है,माझं तुझ्यावर प्रेम आहे,I love you,mujhe tumse pyaar hai,feelings,,draft
+मुझे चिंता है,मला काळजी वाटते,I'm worried,mujhe chinta hai,feelings,,draft
+कुछ नहीं होगा,काही होणार नाही,nothing will happen / don't worry,kuchh nahi hoga,feelings,reassurance,draft
+मैं,मी,I,main,words,,draft
+तुम,तू,you (casual),tum,words,,draft
+आप,तुम्ही,you (polite),aap,words,,draft
+वह,तो / ती / ते,he / she / it,vah,words,he / she / it,draft
+हम,आम्ही,we,hum,words,आपण when the listener is included,draft
+वे,ते,they,ve,words,,draft
+यह,हा / ही / हे,this,yeh,words,by gender of the noun,draft
+मेरा,माझा,my,mera,words,माझी / माझं by gender of the noun,draft
+तुम्हारा,तुझा,your (casual),tumhara,words,,draft
+आपका,तुमचा,your (polite),aapka,words,,draft
+उसका,त्याचा / तिचा,his / her,uska,words,his / her,draft
+हमारा,आमचा,our,hamara,words,,draft
+और,आणि,and,aur,words,,draft
+लेकिन,पण,but,lekin,words,,draft
+या,किंवा,or,ya,words,,draft
+क्योंकि,कारण,because,kyonki,words,,draft
+अगर,जर,if,agar,words,,draft
+तो,तर,then,to,words,,draft
+भी,पण / सुद्धा,also,bhi,words,,draft
+बहुत,खूप,very / a lot,bahut,words,,draft
+थोड़ा,थोडं,a little,thoda,words,,draft
+ज़्यादा,जास्त,more,zyada,words,,draft
+कम,कमी,less,kam,words,,draft
+बड़ा,मोठा,big,bada,words,,draft
+छोटा,लहान,small,chhota,words,,draft
+अच्छा (गुण),चांगला,good,achha,words,,draft
+बुरा,वाईट,bad,bura,words,,draft
+नया,नवीन,new,naya,words,,draft
+पुराना,जुना,old,purana,words,,draft
+सस्ता,स्वस्त,cheap,sasta,words,,draft
+महँगा,महाग,expensive,mehenga,words,,draft
+जल्दी,लवकर,quickly / early,jaldi,words,,draft
+धीरे,हळू,slowly,dheere,words,,draft
+सही,बरोबर,correct,sahi,words,,draft
+ग़लत,चूक,wrong,galat,words,,draft
+खुला,उघडा,open,khula,words,,draft
+बंद,बंद,closed,band,words,,draft
+आना,येणे,to come,aana,words,,draft
+जाना,जाणे,to go,jaana,words,,draft
+करना,करणे,to do,karna,words,,draft
+देना,देणे,to give,dena,words,,draft
+लेना,घेणे,to take,lena,words,,draft
+खाना (क्रिया),खाणे / जेवणे,to eat,khana,words,eat / have a meal,draft
+पीना,पिणे,to drink,peena,words,,draft
+देखना,बघणे,to see,dekhna,words,,draft
+सुनना,ऐकणे,to hear,sunna,words,,draft
+बोलना,बोलणे,to speak,bolna,words,,draft
+पढ़ना,वाचणे,to read,padhna,words,to read — शिकणे is to study,draft
+लिखना,लिहिणे,to write,likhna,words,,draft
+सोना,झोपणे,to sleep,sona,words,,draft
+उठना,उठणे,to get up,uthna,words,,draft
+बैठना,बसणे,to sit,baithna,words,,draft
+चलना,चालणे,to walk,chalna,words,,draft
+दौड़ना,धावणे,to run,daudna,words,,draft
+समझना,समजणे,to understand,samajhna,words,,draft
+जानना,माहीत असणे,to know,jaanna,words,,draft
+चाहना,हवं असणे,to want,chahna,words,,draft
+मिलना,भेटणे,to meet,milna,words,,draft
+खरीदना,विकत घेणे,to buy,kharidna,words,,draft
+बेचना,विकणे,to sell,bechna,words,,draft
+सीखना,शिकणे,to learn,seekhna,words,,draft
+भूलना,विसरणे,to forget,bhoolna,words,,draft
+याद रखना,लक्षात ठेवणे,to remember,yaad rakhna,words,,draft
+रुकना,थांबणे,to stop,rukna,words,,draft
+खोलना,उघडणे,to open,kholna,words,,draft
+बंद करना,बंद करणे,to close,band karna,words,,draft
+कौन सा प्लेटफ़ॉर्म है?,कोणता प्लॅटफॉर्म आहे?,which platform is it?,kaun sa platform hai,train,,draft
+पनवेल की ट्रेन किस प्लेटफ़ॉर्म पर है?,पनवेलची ट्रेन कोणत्या प्लॅटफॉर्मवर आहे?,which platform for the Panvel train?,panvel ki train kis platform par hai,train,,draft
+यह ट्रेन कहाँ तक जाती है?,ही गाडी कुठपर्यंत जाते?,how far does this train go?,yeh train kahan tak jaati hai,train,ट्रेन and गाडी are both used,draft
+यह फ़ास्ट है या स्लो?,ही फास्ट आहे की स्लो?,is this fast or slow?,yeh fast hai ya slow,train,,draft
+यह ठाणे रुकेगी?,ही ठाण्याला थांबेल का?,does this stop at Thane?,yeh thane rukegi,train,,draft
+यह दादर जाएगी?,ही दादरला जाईल का?,does this go to Dadar?,yeh dadar jaayegi,train,,draft
+अगला स्टेशन कौन सा?,पुढचं स्टेशन कोणतं?,which is the next station?,agla station kaun sa,train,,draft
+दादर आ गया?,दादर आलं का?,has Dadar come?,dadar aa gaya,train,,draft
+दादर कितने स्टॉप बाद?,दादर किती स्टॉप नंतर?,how many stops to Dadar?,dadar kitne stop baad,train,,draft
+मुझे अगले स्टेशन पर उतरना है,मला पुढच्या स्टेशनला उतरायचं आहे,I have to get off at the next station,mujhe agle station par utarna hai,train,,draft
+आगे चलिए,पुढे चला,move forward,aage chaliye,train,,draft
+थोड़ा अंदर चलिए,जरा आत चला,move inside a little,thoda andar chaliye,train,,draft
+जगह दीजिए,जागा द्या,make some room,jagah dijiye,train,,draft
+उतरने दीजिए,उतरू द्या,let me get off,utarne dijiye,train,,draft
+चढ़ने दीजिए,चढू द्या,let me get on,chadhne dijiye,train,,draft
+पहले उतरने दो,आधी उतरू द्या,let people off first,pehle utarne do,train,,draft
+धक्का मत दीजिए,धक्का देऊ नका,don't push,dhakka mat dijiye,train,,draft
+यह सीट खाली है?,ही जागा रिकामी आहे का?,is this seat free?,yeh seat khali hai,train,,draft
+यहाँ बैठ सकता हूँ?,इथे बसू का?,may I sit here?,yahan baith sakta hoon,train,same for a woman — the verb does not change,draft
+यह सीट किसी की है?,ही जागा कोणाची आहे का?,is this seat taken?,yeh seat kisi ki hai,train,,draft
+चौथी सीट,चौथी सीट,fourth seat,chauthi seat,train,,draft
+खड़े रहिए,उभे राहा,please stand,khade rahiye,train,,draft
+दरवाज़े पर मत खड़े रहिए,दारात उभं राहू नका,don't stand in the doorway,darwaze par mat khade rahiye,train,,draft
+अंदर आ जाइए,आत या,come inside,andar aa jaiye,train,,draft
+गाड़ी छूट गई,गाडी सुटली,I missed the train,gaadi chhoot gayi,train,,draft
+गाड़ी लेट है,गाडी उशिरा आहे,the train is late,gaadi late hai,train,,draft
+कितनी देर से है?,किती उशीर आहे?,how late is it?,kitni der se hai,train,,draft
+अगली गाड़ी कब है?,पुढची गाडी कधी आहे?,when is the next train?,agli gaadi kab hai,train,,draft
+मेगा ब्लॉक है क्या?,मेगा ब्लॉक आहे का?,is there a mega block?,mega block hai kya,train,Sunday maintenance shutdown,draft
+आज ट्रेन बंद है,आज गाड्या बंद आहेत,trains are off today,aaj train band hai,train,,draft
+भीड़ बहुत है,खूप गर्दी आहे,it's very crowded,bheed bahut hai,train,,draft
+आज कम भीड़ है,आज कमी गर्दी आहे,it's less crowded today,aaj kam bheed hai,train,,draft
+लेडीज़ डिब्बा कहाँ है?,लेडीज डबा कुठे आहे?,where is the ladies' coach?,ladies dibba kahan hai,train,,draft
+यह लेडीज़ डिब्बा है,हा लेडीज डबा आहे,this is the ladies' coach,yeh ladies dibba hai,train,,draft
+फ़र्स्ट क्लास है,हा फर्स्ट क्लास आहे,this is first class,first class hai,train,,draft
+मेरा स्टेशन आ गया,माझं स्टेशन आलं,my station has come,mera station aa gaya,train,,draft
+दो टिकट दादर,दादरची दोन तिकिटं द्या,two tickets to Dadar,do ticket dadar,ticket,,draft
+वापसी टिकट दीजिए,परतीचं तिकीट द्या,"a return ticket, please",wapsi ticket dijiye,ticket,,draft
+कितने का है?,किती रुपये?,how much is it?,kitne ka hai,ticket,,draft
+छुट्टे दीजिए,सुटे द्या,give me change,chhutte dijiye,ticket,,draft
+मासिक पास बनवाना है,मासिक पास काढायचा आहे,I want to get a monthly pass,masik pass banwana hai,ticket,,draft
+पास कहाँ बनता है?,पास कुठे काढतात?,where do I get a pass made?,pass kahan banta hai,ticket,,draft
+मेरा पास खत्म हो गया,माझा पास संपला,my pass has expired,mera pass khatam ho gaya,ticket,,draft
+फ़ॉर्म भरना है?,फॉर्म भरायचा आहे का?,do I need to fill a form?,form bharna hai,ticket,,draft
+लाइन कहाँ है?,रांग कुठे आहे?,where is the queue?,line kahan hai,ticket,,draft
+लाइन में लगिए,रांगेत उभे राहा,get in the queue,line mein lagiye,ticket,,draft
+मेरा नंबर है,माझा नंबर आहे,it's my turn,mera number hai,ticket,,draft
+आगे मत घुसिए,पुढे घुसू नका,don't cut in,aage mat ghusiye,ticket,,draft
+टिकट चेकर आया है,तिकीट चेकर आलाय,the ticket checker has come,ticket checker aaya hai,ticket,,draft
+टिकट दिखाइए,तिकीट दाखवा,show your ticket,ticket dikhaiye,ticket,,draft
+मेरा टिकट खो गया,माझं तिकीट हरवलं,I've lost my ticket,mera ticket kho gaya,ticket,,draft
+यूपीआई है?,यूपीआय आहे का?,do you have UPI?,UPI hai,ticket,,draft
+यह बस कहाँ जाती है?,ही बस कुठे जाते?,where does this bus go?,yeh bus kahan jaati hai,bus,,draft
+कौन सी बस दादर जाती है?,कोणती बस दादरला जाते?,which bus goes to Dadar?,kaun si bus dadar jaati hai,bus,,draft
+कितनी देर लगेगी?,किती वेळ लागेल?,how long will it take?,kitni der lagegi,bus,,draft
+बस स्टॉप कहाँ है?,बस स्टॉप कुठे आहे?,where is the bus stop?,bus stop kahan hai,bus,,draft
+यहाँ रुकती है?,इथे थांबते का?,does it stop here?,yahan rukti hai,bus,,draft
+आगे उतरना है,पुढे उतरायचं आहे,I'm getting off ahead,aage utarna hai,bus,,draft
+अगले स्टॉप पर रोकिए,पुढच्या स्टॉपला थांबवा,stop at the next stop,agle stop par rokiye,bus,,draft
+घंटी बजाइए,घंटी वाजवा,ring the bell,ghanti bajaiye,bus,,draft
+टिकट लीजिए,तिकीट घ्या,take a ticket,ticket lijiye,bus,,draft
+दो टिकट दीजिए,दोन तिकिटं द्या,"two tickets, please",do ticket dijiye,bus,,draft
+कंडक्टर,कंडक्टर,conductor,conductor,bus,,draft
+पीछे से चढ़िए,मागून चढा,board from the back,peechhe se chadhiye,bus,,draft
+आगे से उतरिए,पुढून उतरा,get off from the front,aage se utariye,bus,,draft
+सीट खाली है,जागा रिकामी आहे,the seat is free,seat khali hai,bus,,draft
+बुज़ुर्गों के लिए है,ज्येष्ठांसाठी आहे,reserved for senior citizens,buzurgon ke liye hai,bus,reserved seating,draft
+रिक्शा मिलेगा?,रिक्षा मिळेल का?,can I get an auto?,rickshaw milega,auto,,draft
+पनवेल चलोगे?,पनवेलला याल का?,will you go to Panvel?,panvel chaloge,auto,,draft
+मीटर डालिए,मीटर टाका,put on the meter,meter daaliye,auto,,draft
+मीटर बंद है,मीटर बंद आहे,the meter is off,meter band hai,auto,,draft
+कितना होगा?,किती होईल?,how much will it be?,kitna hoga,auto,,draft
+बहुत ज़्यादा है,खूप जास्त आहे,that's too much,bahut zyada hai,auto,,draft
+सौ में चलो,शंभरात चला,go for a hundred,sau mein chalo,auto,,draft
+शेयर में जाओगे?,शेअरमध्ये जाल का?,will you go shared?,share mein jaoge,auto,,draft
+सिग्नल पर रोकिए,सिग्नलला थांबा,stop at the signal,signal par rokiye,auto,,draft
+आगे रोकिए,पुढे थांबा,stop ahead,aage rokiye,auto,,draft
+थोड़ा आगे,जरा पुढे,a little further,thoda aage,auto,,draft
+यहीं ठीक है,इथेच ठीक आहे,right here is fine,yahin theek hai,auto,,draft
+बाएँ लीजिए,डावीकडे घ्या,take a left,baayen lijiye,auto,,draft
+दाएँ लीजिए,उजवीकडे घ्या,take a right,daayen lijiye,auto,,draft
+सीधे चलिए,सरळ चला,go straight,seedhe chaliye,auto,,draft
+यू-टर्न लीजिए,यू टर्न घ्या,take a U-turn,u-turn lijiye,auto,,draft
+पीछे लीजिए,मागे घ्या,reverse,peechhe lijiye,auto,,draft
+गली में लीजिए,गल्लीत घ्या,go into the lane,gali mein lijiye,auto,,draft
+सोसाइटी के अंदर लीजिए,सोसायटीत घ्या,go inside the society,society ke andar lijiye,auto,,draft
+गेट पर रोकिए,गेटपाशी थांबा,stop at the gate,gate par rokiye,auto,,draft
+मेरे पास छुट्टे नहीं हैं,माझ्याकडे सुटे नाहीत,I don't have change,mere paas chhutte nahi hain,auto,,draft
+रसीद दीजिए,पावती द्या,give me a receipt,raseed dijiye,auto,,draft
+मना कर दिया,नाही म्हणाला,he refused,mana kar diya,auto,when a driver refuses,draft
+वह जा नहीं रहा,तो जात नाहीये,he won't go,woh ja nahi raha,auto,,draft
+ट्रैफ़िक बहुत है,खूप ट्रॅफिक आहे,there's a lot of traffic,traffic bahut hai,road,,draft
+जाम लगा है,जाम लागलाय,there's a jam,jaam laga hai,road,,draft
+रास्ता बंद है,रस्ता बंद आहे,the road is closed,rasta band hai,road,,draft
+दूसरा रास्ता लीजिए,दुसरा रस्ता घ्या,take another route,doosra rasta lijiye,road,,draft
+शॉर्टकट है?,शॉर्टकट आहे का?,is there a shortcut?,shortcut hai,road,,draft
+पैदल जा सकते हैं?,चालत जाता येईल का?,can I walk there?,paidal ja sakte hain,road,,draft
+दस मिनट लगेंगे,दहा मिनिटं लागतील,it'll take ten minutes,das minute lagenge,road,,draft
+पास ही है,जवळच आहे,it's close by,paas hi hai,road,,draft
+बहुत दूर है,खूप लांब आहे,it's very far,bahut door hai,road,,draft
+सामने ही है,समोरच आहे,it's right in front,saamne hi hai,road,,draft
+उस तरफ़,त्या बाजूला,that side,us taraf,road,,draft
+इस तरफ़,या बाजूला,this side,is taraf,road,,draft
+पुल के नीचे,पुलाखाली,under the bridge,pul ke neeche,road,,draft
+पुल के ऊपर,पुलावरून,over the bridge,pul ke oopar,road,,draft
+सिग्नल से पहले,सिग्नलच्या आधी,before the signal,signal se pehle,road,,draft
+सिग्नल के बाद,सिग्नलनंतर,after the signal,signal ke baad,road,,draft
+मंदिर के पास,मंदिराजवळ,near the temple,mandir ke paas,road,,draft
+मैं रास्ता भटक गया,मी रस्ता चुकलो,I've lost my way,main rasta bhatak gaya,road,female speaker says चुकले,draft
+यह पता कहाँ है?,हा पत्ता कुठे आहे?,where is this address?,yeh pata kahan hai,road,,draft
+मुझे यह जगह ढूंढनी है,मला ही जागा शोधायची आहे,I need to find this place,mujhe yeh jagah dhoondhni hai,road,,draft
+गूगल मैप गलत दिखा रहा है,गुगल मॅप चुकीचं दाखवतंय,Google Maps is showing it wrong,google map galat dikha raha hai,road,,draft
+पेट्रोल भरवाना है,पेट्रोल भरायचं आहे,I need to fill petrol,petrol bharvana hai,road,,draft
+फ़ुल टंकी,फुल टाकी,full tank,full tanki,road,,draft
+हवा चेक कीजिए,हवा चेक करा,check the air,hawa check kijiye,road,,draft
+पंक्चर हो गया,पंक्चर झालं,I've got a puncture,puncture ho gaya,road,,draft
+गाड़ी बंद पड़ गई,गाडी बंद पडली,the vehicle has broken down,gaadi band pad gayi,road,,draft
+पार्किंग कहाँ है?,पार्किंग कुठे आहे?,where is the parking?,parking kahan hai,road,,draft
+यहाँ पार्किंग नहीं है,इथे पार्किंग नाही,there's no parking here,yahan parking nahi hai,road,,draft
+गाड़ी हटाइए,गाडी बाजूला घ्या,move the vehicle,gaadi hataiye,road,,draft
+टोल कितना है?,टोल किती आहे?,how much is the toll?,toll kitna hai,road,,draft
+जल्दी है,घाई आहे,I'm in a hurry,jaldi hai,hurry,,draft
+बहुत जल्दी है,खूप घाई आहे,I'm in a great hurry,bahut jaldi hai,hurry,,draft
+कोई जल्दी नहीं,घाई नाही,there's no hurry,koi jaldi nahi,hurry,,draft
+पाँच मिनट में पहुँचता हूँ,पाच मिनिटांत पोहोचतो,I'll be there in five minutes,paanch minute mein pahunchta hoon,hurry,female speaker says पोहोचते,draft
+मैं निकल गया हूँ,मी निघालोय,I've left,main nikal gaya hoon,hurry,female speaker says निघालेय,draft
+रास्ते में हूँ,रस्त्यात आहे,I'm on the way,raaste mein hoon,hurry,,draft
+पहुँच गया,पोहोचलो,I've arrived,pahunch gaya,hurry,female speaker says पोहोचले,draft
+थोड़ा रुकिए,जरा थांबा,wait a moment,thoda rukiye,hurry,,draft
+मैं इंतज़ार कर रहा हूँ,मी वाट बघतोय,I'm waiting,main intezaar kar raha hoon,hurry,female speaker says बघतेय,draft
+कहाँ हो?,कुठे आहेस?,where are you?,kahan ho,hurry,casual — to one person,draft
+बस पहुँच रहा हूँ,आलोच,I'm almost there,bas pahunch raha hoon,hurry,literally 'I have come' — said when nearly there,draft
+निकल रहा हूँ,निघतोय,I'm leaving now,nikal raha hoon,hurry,female speaker says निघतेय,draft
