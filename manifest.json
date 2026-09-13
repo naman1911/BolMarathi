@@ -1,0 +1,14 @@
+{
+  "name": "बोलपथ — Hindi to Marathi",
+  "short_name": "बोलपथ",
+  "description": "A Hindi to Marathi phrasebook. Instant, offline.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f1e6",
+  "theme_color": "#f7f1e6",
+  "lang": "mr",
+  "icons": [
+    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
