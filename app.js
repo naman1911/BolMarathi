@@ -2,6 +2,7 @@
 // Search itself lives in search.js.
 
 import { indexRow, searchRows, normDev, isDevanagari, fold, toRoman } from './search.js';
+import { expand } from './templates.js';
 
 const $ = id => document.getElementById(id);
 let phrases = [];
@@ -16,15 +17,26 @@ async function sheet(name) {
 
 // Two tiers. phrases.csv is hand-written and checked; corpus.csv, if present,
 // is drawn from open parallel corpora and labelled with its source.
+// Three tiers, in descending order of how much a person stands behind them:
+// hand-written phrases, sentences built from checked patterns and words, and
+// anything drawn from open parallel corpora.
 async function load() {
-  const [curated, corpus] = await Promise.all([sheet('./phrases.csv'), sheet('./corpus.csv')]);
+  const [curated, patterns, nouns, corpus] = await Promise.all([
+    sheet('./phrases.csv'), sheet('./patterns.csv'),
+    sheet('./nouns.csv'), sheet('./corpus.csv'),
+  ]);
+  const built = patterns.length && nouns.length ? expand(patterns, nouns) : [];
+
   phrases = [
     ...curated.map(p => ({ ...p, tier: 'curated' })),
+    ...built,
     ...corpus.map(p => ({ ...p, tier: 'corpus', status: 'corpus' })),
   ].map(indexRow);
-  $('count').textContent = corpus.length
-    ? `${curated.length} phrases + ${corpus.length} from corpora`
-    : `${curated.length} phrases`;
+
+  const parts = [`${curated.length} phrases`];
+  if (built.length) parts.push(`${built.length} built`);
+  if (corpus.length) parts.push(`${corpus.length} from corpora`);
+  $('count').textContent = parts.join(' + ');
   buildChips(curated);
   render();
 }
@@ -99,8 +111,8 @@ function render() {
   $('results').replaceChildren(...hits.map(p => {
     const li = document.createElement('li');
     li.className = 'phrase';
-    const tier = p.tier === 'corpus'
-      ? `<span class="tier">${esc(p.source || 'corpus')}</span> `
+    const tier = p.tier === 'corpus' ? `<span class="tier">${esc(p.source || 'corpus')}</span> `
+      : p.tier === 'built' ? '<span class="tier built">built</span> '
       : '';
     li.innerHTML = `
       <div class="hi" lang="hi">${highlight(p.hindi, q)}</div>

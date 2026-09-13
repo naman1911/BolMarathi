@@ -227,6 +227,7 @@ export function searchRows(rows, query, { situation = null } = {}) {
         if (h.includes(phrase)) { score += 2; break; }
       }
     }
+    if (row.tier === 'built') score *= 0.92;
     if (row.tier === 'corpus') score *= 0.8;
     if (row.status === 'ok') score *= 1.08;
     scored.push({ row, score });
