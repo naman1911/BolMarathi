@@ -1,8 +1,8 @@
 // Offline shell. The page and its assets are cached on install; the phrase
 // sheet is fetched fresh when the network is there and served from cache
 // when it is not, so edits reach the app but never break it.
-const CACHE = 'bolpath-v2';
-const SHELL = ['./', './index.html', './manifest.json', './icon.svg', './phrases.csv'];
+const CACHE = 'bolpath-v3';
+const SHELL = ['./', './index.html', './app.js', './search.js', './manifest.json', './icon.svg', './phrases.csv'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(async c => {
