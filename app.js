@@ -1,72 +1,90 @@
-// app.js — the page. Data loading, rendering, speech.
-// Search itself lives in search.js.
+// app.js — the page. Rendering, chips, speech.
+// Search itself lives in search.js, and runs in worker.js when it can.
 
-import { indexRow, searchRows, normDev, isDevanagari, fold, toRoman } from './search.js';
-import { expand } from './templates.js';
+import { normDev, isDevanagari, fold, toRoman, wordHit, indexRow, buildIndex, searchRows }
+  from './search.js';
+import { loadTiers, countLabel, strip } from './corpus.js';
 
+const PAGE = 200;
 const $ = id => document.getElementById(id);
-let phrases = [];
 let situation = null;
+let seq = 0;        // every search gets a number, so late answers to
+let want = 0;       // abandoned questions can be thrown away
 
-// --- data -----------------------------------------------------------------
+// --- the engine, wherever it ended up ------------------------------------
+//
+// A module worker is the whole point — parsing and indexing the corpus must
+// not touch the main thread. But an old Android WebView may not have one, and
+// a phrasebook that fails to open is worse than one that stutters while it
+// loads, so the same modules run in the page when the worker cannot be made.
 
-async function sheet(name) {
-  const res = await fetch(name, { cache: 'no-cache' }).catch(() => null);
-  return res && res.ok ? parseCSV(await res.text()) : [];
-}
+// A worker that cannot parse its own modules reports it asynchronously, well
+// after construction succeeded — so the fallback has to be able to take over
+// later, not just instead.
+let started = false;
 
-// Two tiers. phrases.csv is hand-written and checked; corpus.csv, if present,
-// is drawn from open parallel corpora and labelled with its source.
-// Three tiers, in descending order of how much a person stands behind them:
-// hand-written phrases, sentences built from checked patterns and words, and
-// anything drawn from open parallel corpora.
-async function load() {
-  const [curated, patterns, nouns, corpus] = await Promise.all([
-    sheet('./phrases.csv'), sheet('./patterns.csv'),
-    sheet('./nouns.csv'), sheet('./corpus.csv'),
-  ]);
-  const built = patterns.length && nouns.length ? expand(patterns, nouns) : [];
-
-  phrases = [
-    ...curated.map(p => ({ ...p, tier: 'curated' })),
-    ...built,
-    ...corpus.map(p => ({ ...p, tier: 'corpus', status: 'corpus' })),
-  ].map(indexRow);
-
-  const parts = [`${curated.length} phrases`];
-  if (built.length) parts.push(`${built.length} built`);
-  if (corpus.length) parts.push(`${corpus.length} from corpora`);
-  $('count').textContent = parts.join(' + ');
-  buildChips(curated);
-  render();
-}
-
-function parseCSV(text) {
-  const rows = [];
-  let row = [], field = '', quoted = false;
-  for (let i = 0; i < text.length; i += 1) {
-    const c = text[i];
-    if (quoted) {
-      if (c === '"' && text[i + 1] === '"') { field += '"'; i += 1; }
-      else if (c === '"') quoted = false;
-      else field += c;
-    } else if (c === '"') quoted = true;
-    else if (c === ',') { row.push(field); field = ''; }
-    else if (c === '\n' || c === '\r') {
-      if (c === '\r' && text[i + 1] === '\n') i += 1;
-      row.push(field); rows.push(row); row = []; field = '';
-    } else field += c;
+function connect() {
+  let w;
+  try {
+    w = new Worker('./worker.js', { type: 'module' });
+  } catch {
+    return inPage();
   }
-  if (field || row.length) { row.push(field); rows.push(row); }
-  const [head, ...body] = rows.filter(r => r.some(v => v.trim()));
-  return body.map(r => Object.fromEntries(head.map((h, i) => [h.trim(), (r[i] ?? '').trim()])));
+  w.addEventListener('message', ({ data }) => {
+    started = true;
+    if (data.type === 'ready') ready(data);
+    else if (data.type === 'results') results(data);
+    else if (data.type === 'failed') fail(data.message);
+  });
+  w.addEventListener('error', e => {
+    e.preventDefault();
+    if (started) return;
+    started = true;
+    w.terminate();
+    ask = inPage();
+  });
+  w.postMessage({ type: 'load', base: './' });
+  return q => w.postMessage(q);
+}
+
+function inPage() {
+  let index = null;
+  loadTiers('./').then(({ rows, situations, counts }) => {
+    index = buildIndex(rows.map(indexRow));
+    ready({ situations, label: countLabel(counts), total: rows.length });
+  }).catch(err => fail(String(err && err.message || err)));
+
+  return ({ q, situation: sit, seq: n }) => {
+    if (!index) return;
+    const hits = searchRows(index, q, { situation: sit, limit: PAGE });
+    results({ seq: n, q, hits: hits.map(strip) });
+  };
+}
+
+let ask = connect();
+
+function ready({ situations, label }) {
+  $('count').textContent = label;
+  buildChips(situations);
+  search();
+}
+
+function fail(message) {
+  $('empty').hidden = false;
+  $('empty').innerHTML = `<b>पुस्तक उघडलं नाही</b>The phrasebook could not be `
+    + `loaded. ${esc(message)}`;
+}
+
+function search() {
+  seq += 1;
+  want = seq;
+  ask({ type: 'search', q: $('q').value, situation, seq });
 }
 
 // --- render ---------------------------------------------------------------
 
-function buildChips(curated) {
-  const sits = [...new Set(curated.map(p => p.situation).filter(Boolean))];
-  $('chips').replaceChildren(...sits.map(s => {
+function buildChips(situations) {
+  $('chips').replaceChildren(...situations.map(s => {
     const b = document.createElement('button');
     b.className = 'chip';
     b.type = 'button';
@@ -77,7 +95,7 @@ function buildChips(curated) {
       for (const c of $('chips').children) {
         c.setAttribute('aria-pressed', String(c.textContent === situation));
       }
-      render();
+      search();
     });
     return b;
   }));
@@ -95,14 +113,15 @@ function highlight(text, query) {
   return String(text).split(/(\s+)/).map(word => {
     if (!word.trim()) return word;
     const key = dev ? normDev(word) : fold(toRoman(word));
-    const hit = tokens.some(t => key.startsWith(t) || (t.length > 3 && key.includes(t)));
+    const hit = tokens.some(t => wordHit(key, t));
     return hit ? `<mark>${esc(word)}</mark>` : esc(word);
   }).join('');
 }
 
-function render() {
-  const q = $('q').value;
-  const hits = searchRows(phrases, q, { situation }).slice(0, 200);
+// The query is the one the results were found for, not whatever is in the box
+// now — otherwise the marks drift ahead of the rows they are marking.
+function results({ seq: n, q, hits }) {
+  if (n !== want) return;
   $('empty').hidden = hits.length > 0;
   if (!hits.length) {
     $('empty').innerHTML = `<b>कुछ नहीं मिला</b>Nothing for “${esc(q)}”`
@@ -161,7 +180,7 @@ function esc(s) {
 }
 
 let t;
-$('q').addEventListener('input', () => { clearTimeout(t); t = setTimeout(render, 40); });
+$('q').addEventListener('input', () => { clearTimeout(t); t = setTimeout(search, 40); });
 $('q').focus();
 
 if ('serviceWorker' in navigator) {
@@ -169,5 +188,3 @@ if ('serviceWorker' in navigator) {
     .then(() => { $('status').textContent = 'Saved for offline use'; })
     .catch(() => {});
 }
-
-load();
