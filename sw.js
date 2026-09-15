@@ -1,17 +1,21 @@
-// Offline shell. The page and its assets are cached on install; the phrase
-// sheet is fetched fresh when the network is there and served from cache
-// when it is not, so edits reach the app but never break it.
-const CACHE = 'bolpath-v6';
+// Offline shell — the page, its modules and the lexicon. The model weights
+// are not here: they are hundreds of megabytes and belong to the runtime's
+// own cache, fetched on request rather than on install, because an install
+// step that large would fail on the connections this is meant for.
+//
+// The lexicon is fetched fresh when there is a network and served from cache
+// when there is not, so edits reach the app but never break it.
+const CACHE = 'bolpath-v7';
 const SHELL = [
   './', './index.html', './manifest.json', './icon.svg',
-  './app.js', './worker.js', './search.js', './templates.js', './corpus.js', './csv.js',
-  './phrases.csv', './patterns.csv', './nouns.csv',
+  './app.js', './translate.worker.js', './engine.js',
+  './detect.js', './translit.js', './search.js', './csv.js',
+  './lexicon.json',
 ];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(async c => {
     await c.addAll(SHELL);
-    await c.add('./corpus.csv').catch(() => {}); // optional second tier
   }).then(() => self.skipWaiting()));
 });
 
@@ -23,7 +27,10 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
-  if (url.pathname.endsWith('.csv')) {
+  // Model weights are handled by the runtime's own cache, and they are far
+  // too large to pull through here. Never touch them.
+  if (url.hostname.includes('huggingface') || url.pathname.includes('.onnx')) return;
+  if (url.pathname.endsWith('.json') && url.pathname.includes('lexicon')) {
     e.respondWith(
       fetch(e.request).then(r => {
         caches.open(CACHE).then(c => c.put(e.request, r.clone()));

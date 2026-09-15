@@ -1,114 +1,145 @@
-# बोलपथ — Hindi to Marathi phrasebook
+# बोलपथ — Hindi, roman or English into Marathi
 
-A phrasebook, not a translator. A few thousand phrases a bilingual speaker
-actually uses, searchable as you type, spoken aloud on tap, working with no
-internet once it has loaded.
+A translator that runs on the phone. Type Devanagari, type "kitna hai", or
+type English; get Marathi. After the model has been fetched once it needs no
+connection, and nothing typed into it is ever sent anywhere.
 
-The whole thing is one HTML page and a handful of spreadsheets.
+## How a sentence gets through
 
-## Editing the phrases
+    text
+      → which language is this?          detect.js
+      → Devanagari, if it came in roman  translit.js  + lexicon.json
+      → the model pack for that language engine.js
+      → Marathi
 
-Everything lives in `phrases.csv`. Five columns:
+Everything after the first step happens in a worker. Inference is seconds of
+solid arithmetic and the page has to stay typeable while it runs.
 
-| column | what goes there |
+### Reading the input
+
+Devanagari answers itself. Latin does not: "station kahan hai" and "where is
+the station" are the same alphabet and different languages, and getting it
+wrong means translating a sentence as if it were written in a language it was
+not. Detection uses vocabulary first — a roman lexicon on one side, English
+words on the other — and falls back to spelling when neither list has seen the
+word, because romanised Hindi has a shape that English does not.
+
+    node detect.test.mjs
+
+Every row of `phrases.csv` holds the same phrase three ways, which is 1,833
+labelled examples. The lexicon is rebuilt five times from four fifths of the
+rows and scored on the fifth it has never seen:
+
+| input | read correctly |
 | --- | --- |
-| `hindi` | the phrase in Hindi |
-| `marathi` | how a Marathi speaker would actually say it |
-| `roman` | the Hindi in roman letters, so "kitna" finds कितना |
-| `situation` | one word — greeting, market, travel, food, help, office… |
-| `note` | optional — register, gender variation, a warmer alternative |
+| Devanagari | 100% |
+| romanised Hindi | 89.7% |
+| English | 92.6% |
+| **overall** | **94.1%** |
 
-Add a row, commit, and the app picks it up on its next load. If a phrase
-contains a comma, wrap it in double quotes.
+Split by length, which is where the truth is:
 
-## The second tier: patterns × words
-
-`patterns.csv` holds sentence frames with a slot — *{X} कुठे आहे?* — and
-`nouns.csv` holds words that go in it. The app multiplies them at load,
-producing about 1,600 sentences from 136 checked items. Verifying stays
-linear while coverage grows.
-
-Neither language allows plain substitution, so both tables carry the
-grammar needed to do it properly:
-
-| column | why it exists |
+| | |
 | --- | --- |
-| `hi_gender`, `mr_gender` | the two languages disagree — चाय is feminine, चहा masculine |
-| `mr_oblique` | postpositions need the oblique stem: स्टेशन → स्टेशनला |
-| `honorific` | a doctor takes डॉक्टरांना, not डॉक्टरांला |
-| `takes` | which categories of noun a pattern accepts |
+| two or more words | 97.4% |
+| a single word | 80.9% |
 
-Built rows are labelled *built* in the app and rank below hand-written ones.
+A bare word is ambiguous and no amount of cleverness fixes it — *das* is ten
+in Hindi and a plausible nothing in English. So the app shows which way it
+read the input, marks the reading as uncertain when it is, and lets you say
+otherwise in one tap. That is the honest interface for a problem that does
+not have a right answer.
 
-## The third tier: corpus.csv
+### Roman into Devanagari
 
-`phrases.csv` is hand-written and checked. `corpus.csv` is optional and comes
-from open, human-translated parallel corpora — currently AI4Bharat's IN22-Conv
-(CC-BY-4.0) and Amazon's MASSIVE (CC0) — paired by sentence ID, filtered to
-short everyday sentences, and never machine-translated. The app loads it if
-present, ranks curated phrases above it, and labels each corpus card with its
-source. `build_corpus.py` holds the Colab cells that produce it.
+The model has never seen "kitna hai" and never will. Something has to put it
+into Devanagari first, and that turns out to be mostly a dictionary problem
+rather than a spelling one.
 
-## How search finds things
+Hindi writes an inherent *a* after every consonant and then declines to
+pronounce most of them; roman spelling follows the pronunciation. कितना is
+typed *kitna* — the schwa after त exists in the script and not in the input.
+Going backwards means putting back a vowel that was never typed, and no rule
+decides reliably where: कितना takes one after त, रस्ता does not, and both look
+like CC in roman.
 
-Typing runs against a trigram index, not the rows. Every field of every row
-is cut into three-character pieces and each piece keeps a list of the rows it
-appears in; a query looks up a few of its own pieces, intersects the lists —
-a second word makes the search *faster*, not slower — and only then scores
-the handful of rows that survived. Scoring itself is unchanged, and the page
-keeps the best two hundred through a heap rather than sorting everything it
-matched.
+A dictionary knows. `build-lexicon.mjs` zips the Hindi and roman columns of
+`phrases.csv` word by word — 611 checked phrases give 1,329 checked word
+pairs for free — and keys them by the same phonetic fold the old search used,
+so *kitna*, *kitnaa* and *kithna* all arrive at the same entry.
 
-Parsing the sheets, transliterating every row and building that index happens
-in a worker, so none of it touches the page. The page stays typeable while
-the phrasebook loads, and if the browser cannot make a module worker the same
-modules run in the page instead.
+    node build-lexicon.mjs      # -> lexicon.json, 31 KB
+    node translit.test.mjs
 
-    node bench.mjs
+Held out five ways, so a test word is never in the lexicon scoring it:
 
-checks both halves of that claim. It verifies the indexed search against an
-exhaustive scan — same rows, same order, and a limited search that is exactly
-the head of an unlimited one — and then times both as the corpus grows,
-adding nouns to the pattern table the way the phrasebook would actually grow
-rather than cloning rows, which would flatter the index on one axis and
-punish it on another.
+| | exact |
+| --- | --- |
+| words the lexicon has never seen | 79.0% |
+| the same words, rules alone | 40.5% |
+| whole phrases, every word right | 55.2% |
 
-On this machine, roughly three to six times faster than a mid-range Android
-phone:
+The gap between those first two rows is the entire argument for shipping a
+dictionary. Words the lexicon *does* know are exact, and it knows 1,073 of
+them — so in practice the rules only handle names and neologisms.
 
-| rows | index build | per query | exhaustive scan |
-| --- | --- | --- | --- |
-| 3,805 | 69 ms | 0.5 ms | 3.7 ms |
-| 9,448 | 126 ms | 0.8 ms | 7.8 ms |
-| 44,247 | 521 ms | 3.3 ms | 36 ms |
-| 211,107 | 2.5 s | 13.5 ms | 149 ms |
+## The models
 
-The index is not a perfect superset of the scan, and the bench says so rather
-than rounding it away. The scorer's fuzzy branch matches words that share
-most of their bigrams in a scrambled order, and those share no trigram, so
-the index cannot reach them. Across the whole vocabulary that is 384 of 9,926
-fuzzy pairs, and every one of them is an anagram coincidence — *lal~ala*,
-*beti~tiket*, *patni~pani*, *naki~kitna*. A real transposition does not reach
-the threshold anyway, so nothing a person would want is lost, and the index
-doubles as a precision filter.
+IndicTrans2 by AI4Bharat, distilled and quantized to int8. It ships as two
+checkpoints, so this ships two packs:
+
+| pack | | when |
+| --- | --- | --- |
+| Indic→Indic, 320M | ~330 MB | Hindi and roman — fetched first |
+| English→Indic, 200M | ~210 MB | the first time you type English |
+
+Both would be over half a gigabyte before the app did anything, which is why
+the English one waits until it is needed. A pack lives in the browser's cache
+once fetched and stays until site data is cleared. The service worker holds
+the shell — page, modules, lexicon — and deliberately does not touch the
+weights: an install step that large fails on the connections this is for.
+
+### Producing them
+
+`export/export_indictrans2.py` converts IndicTrans2 to ONNX, quantizes it, and
+writes the layout transformers.js reads. Run it, upload the directory, put its
+name in `engine.js`.
+
+**This script has not been run.** The sandbox it was written in has no network
+route to HuggingFace, so the model was never downloaded and the export never
+executed. It is a considered starting point, and its two hazards — Optimum not
+recognising IndicTrans2's custom architecture, and IndicTrans2's two-sided
+SentencePiece tokenizer becoming one `tokenizer.json` — are documented at the
+top of the file. The tokenizer is the one that matters: get it subtly wrong
+and the model returns fluent, confident, entirely incorrect Marathi rather
+than an error, which is why the script asserts a round trip before finishing.
+
+Everything else in this repository has been run and measured.
 
 ## Running it
 
-It is a static site. Open `index.html` from any web server, or host it on
-GitHub Pages: Settings → Pages → Deploy from branch → `main`, root.
+A static site; it needs a web server, not a `file://` URL, because it uses
+modules and a worker.
 
-Once opened in Chrome on Android, use the browser menu → *Add to Home screen*.
-After that it opens like an app and works offline.
+    python3 -m http.server 8000
 
-## Why not a translation model
+`?stub` swaps the model for a stub that echoes marked text. The whole app —
+detection, transliteration, the download states, offline behaviour — works
+under it without fetching 330MB, which is how the interface is tested.
 
-Neural translation handles anything and gets the edges wrong. A phrasebook
-handles the few thousand things people say and gets them right, because a
-person who speaks both wrote each line. For conversation, that is the better
-tool — and it fits in a file smaller than a photo.
+For GitHub Pages: Settings → Pages → Deploy from branch → `main`, root. On
+Android, the browser menu → *Add to Home screen* makes it open like an app.
+
+## What was here before
+
+A hand-written phrasebook with a trigram search index over 611 curated
+phrases and 1,597 built from a pattern table. It is in the history, and
+`phrases.csv`, `patterns.csv` and `nouns.csv` still earn their place: they are
+what the transliteration lexicon and the language detector are built from, and
+what both are measured against.
 
 Type is Tiro Devanagari Marathi for Marathi and Tiro Devanagari Hindi for
 Hindi; the two languages draw a few letters differently and deserve their own
 faces.
 
-MIT.
+MIT. IndicTrans2 is MIT, by AI4Bharat.
