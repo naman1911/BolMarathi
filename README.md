@@ -4,7 +4,7 @@ A phrasebook, not a translator. A few thousand phrases a bilingual speaker
 actually uses, searchable as you type, spoken aloud on tap, working with no
 internet once it has loaded.
 
-The whole thing is one HTML page and one spreadsheet.
+The whole thing is one HTML page and a handful of spreadsheets.
 
 ## Editing the phrases
 
@@ -48,6 +48,49 @@ from open, human-translated parallel corpora — currently AI4Bharat's IN22-Conv
 short everyday sentences, and never machine-translated. The app loads it if
 present, ranks curated phrases above it, and labels each corpus card with its
 source. `build_corpus.py` holds the Colab cells that produce it.
+
+## How search finds things
+
+Typing runs against a trigram index, not the rows. Every field of every row
+is cut into three-character pieces and each piece keeps a list of the rows it
+appears in; a query looks up a few of its own pieces, intersects the lists —
+a second word makes the search *faster*, not slower — and only then scores
+the handful of rows that survived. Scoring itself is unchanged, and the page
+keeps the best two hundred through a heap rather than sorting everything it
+matched.
+
+Parsing the sheets, transliterating every row and building that index happens
+in a worker, so none of it touches the page. The page stays typeable while
+the phrasebook loads, and if the browser cannot make a module worker the same
+modules run in the page instead.
+
+    node bench.mjs
+
+checks both halves of that claim. It verifies the indexed search against an
+exhaustive scan — same rows, same order, and a limited search that is exactly
+the head of an unlimited one — and then times both as the corpus grows,
+adding nouns to the pattern table the way the phrasebook would actually grow
+rather than cloning rows, which would flatter the index on one axis and
+punish it on another.
+
+On this machine, roughly three to six times faster than a mid-range Android
+phone:
+
+| rows | index build | per query | exhaustive scan |
+| --- | --- | --- | --- |
+| 3,805 | 69 ms | 0.5 ms | 3.7 ms |
+| 9,448 | 126 ms | 0.8 ms | 7.8 ms |
+| 44,247 | 521 ms | 3.3 ms | 36 ms |
+| 211,107 | 2.5 s | 13.5 ms | 149 ms |
+
+The index is not a perfect superset of the scan, and the bench says so rather
+than rounding it away. The scorer's fuzzy branch matches words that share
+most of their bigrams in a scrambled order, and those share no trigram, so
+the index cannot reach them. Across the whole vocabulary that is 384 of 9,926
+fuzzy pairs, and every one of them is an anagram coincidence — *lal~ala*,
+*beti~tiket*, *patni~pani*, *naki~kitna*. A real transposition does not reach
+the threshold anyway, so nothing a person would want is lost, and the index
+doubles as a precision filter.
 
 ## Running it
 
